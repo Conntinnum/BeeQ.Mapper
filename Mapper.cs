@@ -36,8 +36,7 @@ public static class Mapper
                 var key = (parms[0].ParameterType, parms[1].ParameterType);
 
                 if (MapperMethods.ContainsKey(key))
-                    throw new ArgumentException(
-                        $"Existe más de un método para el mapeo desde [{key.Item1.FullName}] hacia [{key.Item2.FullName}]");
+                    throw new ArgumentException($"Existe más de un método para el mapeo desde [{key.Item1.FullName}] hacia [{key.Item2.FullName}]");
 
                 MapperMethods.Add(key, method);
             }
