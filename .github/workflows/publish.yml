@@ -41,7 +41,7 @@ jobs:
         run: |
           VERSION=${{ steps.calc_version.outputs.new_version }}
           VERSION=${VERSION#v}
-          sed -i "s/<Version>.*<\/Version>/<Version>$VERSION<\/Version>/" BeeQ.Mapper/BeeQ.Mapper.csproj
+          sed -i "s/<Version>.*<\/Version>/<Version>$VERSION<\/Version>/" BeeQ.Mapper.csproj
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -57,7 +57,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Pack
-        run: dotnet pack BeeQ.Mapper/BeeQ.Mapper.csproj --configuration Release --output ./nupkg
+        run: dotnet pack BeeQ.Mapper.csproj --configuration Release --output ./nupkg
 
       - name: Publish to NuGet
         run: dotnet nuget push "./nupkg/*.nupkg" \
