@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Reflection;
 
-namespace BeeQ.Mapper;
+namespace BeeQ;
 
 public static class Mapper
 {

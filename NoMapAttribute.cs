@@ -1,4 +1,4 @@
-﻿namespace BeeQ.Mapper;
+﻿namespace BeeQ;
 
 /// <summary>
 /// Indica que el atributo no se mapea con el AutoMapper

@@ -1,4 +1,4 @@
-﻿namespace BeeQ.Mapper;
+﻿namespace BeeQ;
 
 public static class IMapperExtensions
 {
@@ -12,15 +12,15 @@ public static class IMapperExtensions
         where TDES : class, new() => collection.Select(ori => ori.Mapping<TDES>(extraMap, (object?)data)).AsEnumerable<TDES>();
 
     public static TDES Mapping<TDES>(this IMapperObj ori)
-        where TDES : class, new() => Mapper.Mapping<TDES>(ori, null);
+        where TDES : class, new() => Mapping<TDES>(ori);
 
     public static TDES Mapping<TDES>(this IMapperObj ori, dynamic? data)
-        where TDES : class, new() => Mapper.Mapping<TDES>(ori, data);
+        where TDES : class, new() => Mapping<TDES>(ori, data);
 
     public static TDES Mapping<TDES>(this IMapperObj ori, Action<TDES> extraMap, dynamic? data = null)
         where TDES : class, new()
     {
-        var des = Mapper.Mapping<TDES>(ori, data);
+        var des = Mapping<TDES>(ori, data);
         extraMap(des);
         return des;
     }

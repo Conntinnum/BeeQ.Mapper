@@ -1,4 +1,4 @@
-﻿namespace BeeQ.Mapper;
+﻿namespace BeeQ;
 
 /// <summary>
 /// Interfáz que marca al objeto como mappeable

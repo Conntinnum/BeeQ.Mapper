@@ -1,4 +1,4 @@
-﻿namespace BeeQ.Mapper;
+﻿namespace BeeQ;
 
 /// <summary>
 /// Interfaz que marca la Clase que contendrá el mapeo custom
