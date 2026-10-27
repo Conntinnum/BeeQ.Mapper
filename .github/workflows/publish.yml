@@ -24,10 +24,10 @@ jobs:
       - name: Calculate next MINOR version
         id: calc_version
         run: |
-          TAG=${{ steps.get_tag.outputs.tag }}
+          TAG=$(git tag --sort=-version:refname | head -n 1)
           IFS='.' read -r MAJOR MINOR PATCH <<< "${TAG#v}"
-          NEW_MINOR=$((MINOR+1))
-          NEW_VERSION="v${MAJOR}.${NEW_MINOR}.0"
+          NEW_PATCH=$((PATCH+1))
+          NEW_VERSION="v${MAJOR}.${MINOR}.${NEW_PATCH}"
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create new tag
